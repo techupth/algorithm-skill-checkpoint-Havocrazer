@@ -8,4 +8,24 @@
 // palindrome("abba") === true
 // palindrome("abcdefg") === false
 
-export const palindrome = (str) => {};
+export const palindrome = (str) => {
+  let normalWord = "";
+  for (let i = 0; i < str.length; i++) {
+    normalWord = str[i] + normalWord;
+  }
+  let backwardsWord = "";
+  for (let i = 0; i < normalWord.length; i++) {
+    backwardsWord = normalWord[i] + backwardsWord;
+  }
+  if (backwardsWord === normalWord) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const result1 = palindrome("abba");
+const result2 = palindrome("abcdefg");
+
+console.log(result1);
+console.log(result2);
